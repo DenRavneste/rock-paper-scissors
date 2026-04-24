@@ -15,6 +15,8 @@ function getHumanChoice() {
   return prompt("Rock, paper or scissors?");
 }
 
+// play five rounds of rock paper scissors
+function playGame() {
 // set starting values for human and computer score
 let humanScore = 0;
 let computerScore = 0;
@@ -48,4 +50,5 @@ function playRound(humanChoice, computerChoice) {
   } else {
     console.log("Scissors vs scissors! It's a tie, go again!");
   }
+}
 }
