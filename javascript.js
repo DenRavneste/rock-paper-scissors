@@ -19,6 +19,18 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-// something
+// initiate a round of play
 function playRound(humanChoice, computerChoice) {
+  let humanChoice = getHumanChoice().toLowerCase();
+  let computerChoice = getComputerChoice()
+  if (humanChoice == "rock" && computerChoice == "rock") {
+  } else if (humanChoice == "rock" && computerChoice == "paper") {
+  } else if (humanChoice == "rock" && computerChoice == "scissors") {
+  } else if (humanChoice == "paper" && computerChoice == "rock") {
+  } else if (humanChoice == "paper" && computerChoice == "paper") {
+  } else if (humanChocie == "paper" && computerChoice == "scissors") {
+  } else if (humanChoice == "scissors" && computerChoice == "rock") {
+  } else if (humanChoice == "scissors" && computerChoice == "paper") {
+  } else {
+  }
 }
