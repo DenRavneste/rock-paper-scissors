@@ -1,18 +1,14 @@
 // return one of three variables from function to serve as computer choice
 function getComputerChoice() {
-  let randomNumber = Math.floor(Math.random() * (5 - 1 + 1) + 1);
-  if (randomNumber == 1) {
-    return "rock";
-  } else if (randomNumber == 2) {
-    return "paper";
-  } else {
-    return "scissors";
-  }
+  const choices = ["rock", "paper", "scissors"];
+  let index =  Math.floor(Math.random() * 3);
+  return choices[index];
 }
 
 // prompt player for their input
 function getHumanChoice() {
-  return prompt("Rock, paper or scissors?");
+  let input = prompt("Rock, paper or scissors?");
+  return input.toLowerCase();
 }
 
 // set starting values for human and computer score
@@ -31,10 +27,33 @@ function playRound(humanChoice, computerChoice) {
     (getHumanChoice === "paper" && getComputerChoice === "rock") ||
     (getHumanChoice === "scissors" && getComputerChoice === "paper")
   ) {
-      ++humanScore;
+      humanScore++;
       return `You win! ${getHumanChoice} beats ${getComputerChoice}!`;
     } else {
-      ++computerScore;
+      computerScore++;
       return `You lose! ${getComputerChoice} beats ${getHumanChoice}!`;
     }
+}
+
+function playGame() {
+  for (let i = 1; i <= 5; i++) {
+     console.log(`Round ${i}:`);
+     let human = getHumanChoice();
+     let computer = getComputerChoice();
+     let resultMessage = playRound(human, computer);
+     
+     console.log(`You chose: ${human}`);
+     console.log(`Computer chose: ${computer}`);
+     console.log(resultMessage);
+  }
+  
+  console.log("Game over");
+  console.log(`Final score: You ${humanScore} - ${computerScore} Computer`);
+  
+  if (humanScore > computerScore) {
+    console.log("You won!");
+  } else {
+    console.log("You lost!");
+  }
+  
 }
